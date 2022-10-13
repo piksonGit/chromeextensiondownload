@@ -1,0 +1,131 @@
+{{!< ../default}}
+
+<style>
+  .description-wrapper {
+    padding: 24px;
+    background: #fff;
+  }
+  .header {
+    display: flex;
+    border-radius: 2px;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 16px;
+  }
+  .sumary {
+    padding: 16px;
+    margin: 16px 0;
+    background: #F5F5FA;
+    border-radius: 8px;
+  }
+</style>
+
+{{#contentFor 'title'}}
+  下载页面
+{{/contentFor}}
+  <section class="description-wrapper">
+    <div class="header">
+      <img id="logo" class="logo" alt="logo" width="80" height="80">
+      <div id="meta" class="meta"></div>
+    </div>
+    <div class="c-content">
+      <div id="desc" class="card"></div>
+      <div class="card">
+        <h2>插件安装流程</h2>
+        <div style="line-height: 42px;">
+            <p>(1)点击下载按钮，关注“扩展迷Extfans”公众号并获取验证码，在网页弹窗中输入验证码，即可下载最新安装文件。</p>
+            <p>(2)将扩展迷上下载的安装包文件（.zip）解压为文件夹，其中类型为“crx”的文件就是接下来需要用到的安装文件</p>
+            <p>(3) 从设置->更多工具->扩展程序 打开扩展程序页面，或者地址栏输入 Chrome://extensions/ 按下回车打开扩展程序页面</p>
+            <p>(4) 打开扩展程序页面的“开发者模式”</p>
+            <p>(5) 将crx文件拖拽到扩展程序页面，完成安装</p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>免责声明</h2>
+        <p style="color: red;">本站是专业的Chrome插件下载网站，内容整理自网络，所提供内容仅供学习使用，请勿做非法用途，不得以任何方式利用本网站提供内容直接或间接从事违反中国法律法规，以及社会公德的行为。若本站内容涉嫌侵犯他人知识产权或其他合法权益的内容，请及时联系立即删除；本站尊重并保护所有用户的个人隐私权。</p>
+      </div>
+      <div class="card">
+        <h2>下载地址</h2>
+        <div class="btns-wrapper">
+          <button id="downloadBtn" class="c-btn c-btn--small">下载</button>
+        </div>
+      </div>
+    </div>
+  </section>
+<script>
+  // 从地址栏中获取id 
+  const params = new URL(document.location).searchParams
+  const id = params.get('id')
+
+  async function init() {
+    try {
+      const formBody = []
+      formBody.push()
+
+      const reponse = await fetch('https://site-api.infinitytab.com/api/c/application/get-detail-byid', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id
+        })
+      })
+
+      const res = await reponse.json()
+
+      if (res.code !== 0) return
+      const { data } = res
+
+      window.platformId = data.platformId
+
+      // 设置logo
+      const logo = document.getElementById('logo')
+      logo.setAttribute('src', data.logo)
+
+      // 设置头部
+      const metaEle = document.getElementById('meta')
+      metaEle.innerHTML = `
+        <h1 id='extTitle' class='c-archive__title'>${data.title}</h1>
+        <p class='c-card-author-mini__bio'>发布者: ${data.author}</p>
+      `
+
+      // 设置描述
+      const desc = document.getElementById('desc')
+      desc.innerHTML = `
+        <p class="c-post-header__excerpt">${data.description}</p>
+      `
+    } catch(err) {
+      console.log('err is:', err)
+    }
+  }
+
+  init()
+
+  const downloadBtn = document.getElementById('downloadBtn')
+  downloadBtn.addEventListener('click', async () => {
+    const reponse = await fetch('https://site-api.infinitytab.com/api/c/application/get-download-link-free', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        platformId: window.platformId,
+        _id: id
+      })
+    })
+    const res = await reponse.json()
+    if (res.code === 0) {
+      const { url = [] } = res.data
+      if (url.length) {
+        const downloadLink = url[0].downloadLink
+        window.open(downloadLink)
+      }
+    }
+  })
+
+</script>

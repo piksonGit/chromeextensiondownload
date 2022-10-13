@@ -1,0 +1,80 @@
+{
+  "Skip to content": "跳到内容",
+  "Scroll to Top": "滚动到顶部",
+  "Table of Contents": "目录",
+
+  "Loading": "加载",
+  "More Posts": "更多",
+
+  "Recent Posts": "最近的帖子",
+  "Featured Posts": "精选文章",
+  "Page Not Found": "网页未找到",
+  "You might also like": "你可能喜欢",
+  "Latest": "最新的",
+  "Authors": "作者",
+  "Navigation": "导航",
+  "Newsletter": "通讯",
+  "Published with {ghostLink} & {themeLink}": "发表于 {ghostLink} 和 {themeLink}",
+
+  "Share on Twitter": "分享到Twitter",
+  "Share on Facebook": "分享到Faebook",
+  "Share on LinkedIn": "分享到LinkedIn",
+  "Share on Pinterest": "分享到Pinterest",
+  "Share via Email": "邮件分享",
+  "Copy link": "复制链接",
+  "Link copied to clipboard": "链接已复制到剪贴板",
+
+  "Search": "搜索",
+  "Search {siteTitle}": "搜索 {siteTitle}",
+  "Type to Search": "输入搜索",
+
+  "Paid": "支付",
+  "Members": "成员",
+  "Public": "公共",
+
+  "Account": "账户",
+  "Log in": "登录",
+  "Log out": "退出",
+  "Continue": "继续",
+  "Subscribe": "订阅",
+  "Subscribe Now": "立即订阅",
+  "Your email address": "邮箱地址",
+  "{siteTitle} Newsletter": "{siteTitle} Newsletter",
+  "Please check your inbox and click the link to complete the login.": "请检查您的收件箱并单击链接以完成登录。",
+  "Please check your inbox and click the link to confirm your subscription.": "请检查您的收件箱并单击链接以确认您的订阅。",
+  "Please enter a valid email address!": "请输入有效的电子邮件地址！",
+  "An error occurred, please try again later.": "发生了一个错误。请稍后重试。",
+
+  "Already have an account?": "已经有一个帐户？",
+  "Don't have an account yet?": "还没有帐户？",
+
+  "This post is for paying subscribers only": "这篇文章仅供付费订阅者使用",
+  "This post is for subscribers only": "这篇文章仅供订阅者使用",
+  "This page is for paying subscribers only": "此页面仅供付费订阅者使用",
+  "This page is for subscribers only": "此页面仅供订阅者使用",
+
+  "Join the newsletter to receive the latest updates in your inbox.": "加入时事通讯以在您的收件箱中接收最新更新。",
+
+  "Choose your subscription": "选择您的订阅",
+  "Unlock full access to {siteTitle} and see the entire library of members-only content & updates.": "解锁对 {siteTitle} 的完全访问权限并查看整个仅限会员的内容和更新库。",
+  "Subscribe to {siteTitle}": "订阅 {siteTitle}",
+  "Choose this plan": "选择这个计划",
+  "Monthly": "月",
+  "Yearly": "年",
+  "Free": "免费",
+
+  "Welcome back!": "欢迎回来",
+  "Log in to your account again.": "再次登录您的帐户。",
+  "Send login link": "发送登录链接",
+
+  "Nice, you're a subscriber!": "太好了，你是订阅者！",
+  "Your subscription will expire on": "您的订阅将于",
+  "Your plan": "你的计划",
+  "Card": "卡片",
+  "Expires": "过期",
+  "Next bill date": "下一个账单日期",
+  "Edit billing info": "修改帐单信息",
+  "You have an active {siteTitle} account with access to all posts.": "您有一个有效的 {siteTitle} 帐户，可以访问所有帖子。",
+  "You're a subscriber to free members updates": "您是免费会员更新的订阅者",
+  "You are subscribed to free updates from {siteTitle}, but don't have a paid subscription to read all the posts.": "您订阅了 {siteTitle} 的免费更新，但没有付费订阅来阅读所有帖子。"
+}

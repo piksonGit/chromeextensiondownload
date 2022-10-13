@@ -1,0 +1,15 @@
+<section class='c-post-upgrade-cta'>
+  {{#has visibility='members'}}
+    <h2 class='c-post-upgrade-cta__title'>{{t 'This page is for subscribers only'}}</h2>
+    <a class='c-btn' href='{{ @site.url }}/signup/'>{{t 'Subscribe Now'}}</a>
+  {{/has}}
+
+  {{#has visibility='paid'}}
+    <h2 class='c-post-upgrade-cta__title'>{{t 'This page is for paying subscribers only'}}</h2>
+    <a class='c-btn' href='{{ @site.url }}/subscribe/'>{{t 'Subscribe Now'}}</a>
+  {{/has}}
+
+  {{#unless @member}}
+    <p class='u-type-xs u-mt-16'>{{t 'Already have an account?'}} <a href='{{ @site.url }}/signin/' class='u-underline u-type-500'>{{t 'Log in'}}</a></p>
+  {{/unless}}
+</section>
