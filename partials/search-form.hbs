@@ -12,8 +12,8 @@
           searchInput.setAttribute('autocomplete','off');
           searchInput.addEventListener('keydown',function(e){
             if(e.which===13){
-              var keyword=encodeURIComponent('site:www.chromeextensiondownload.cn '+e.target.value);
-              window.location.href='https://www.google.com/search?q='+keyword;
+              var keyword=encodeURIComponent('site:chromeextensiondownload.cn '+e.target.value);
+              window.location.href='https://www.baidu.com/s?wd='+keyword;
               document.querySelector('.c-site-container .c-search.js-search').classList.remove('is-active');
               searchInput.value='';
             }
